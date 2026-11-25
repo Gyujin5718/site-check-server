@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: site-check-server
+    runtime: node
+    buildCommand: npm install
+    startCommand: node server.js
+    plan: free
+    envVars:
+      - key: RESEND_API_KEY
+        sync: false
+      - key: FRONTEND_URL
+        value: "https://site-check.onrender.com"
